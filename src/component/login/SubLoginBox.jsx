@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 import { AiFillFacebook } from 'react-icons/ai';
 import { GLOBAL_COLOR } from '../../styles/constans';
 
 function SubLoginBox() {
   return (
     <>
-      <FlexBox>
+      <FlexRow>
         <HalfHr />
         <CloudyString>또는</CloudyString>
         <HalfHr />
-      </FlexBox>
-      <FacebookH3>
+      </FlexRow>
+      <AltLogin>
         <FackbookLogo />
         Facebook으로 로그인
-      </FacebookH3>
-      <FindPasswordStyled>비밀번호를 잊으셨나요?</FindPasswordStyled>
+      </AltLogin>
+      <FindPassword>비밀번호를 잊으셨나요?</FindPassword>
     </>
   );
 }
@@ -27,18 +27,17 @@ const HalfHr = styled.hr`
   width: 30%;
 `;
 
-const CloudyString = styled.div`
+const CloudyString = styled.p`
   font-size: 13px;
   color: ${GLOBAL_COLOR.GRAY_4};
 `;
-
-const FacebookH3 = styled.h3`
+const AltLogin = styled.h3`
   color: #385185;
   font-size: 13px;
   font-weight: 700;
   margin-top: 12px;
 `;
-const FindPasswordStyled = styled.div`
+const FindPassword = styled.div`
   color: #183d8c;
   font-size: 11px;
   font-weight: 600;

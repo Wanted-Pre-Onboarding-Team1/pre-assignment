@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Input } from '../common/Input';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';
 import { ICON_ITEMS } from '../../libs/constans';
 import { GLOBAL_COLOR } from '../../styles/constans';
+import instagramImage from '../../assets/images/instagram.png';
 
 const GNBHeader = () => {
   return (
     <>
       <Header>
-        <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
+        <Logo src={instagramImage} />
         <SearchBox>
           <SearchIcon size={12} />
           <SearchInput
@@ -35,7 +36,7 @@ const GNBHeader = () => {
 };
 
 const Logo = styled.img`
-  height: 30px;
+  height: 40px;
 `;
 const Header = styled.header`
   position: sticky;
@@ -49,7 +50,7 @@ const Header = styled.header`
   background-color: ${GLOBAL_COLOR.WHITE};
   border: 1px solid ${GLOBAL_COLOR.BORDER};
 `;
-const IconBox = styled(FlexBox)`
+const IconBox = styled(FlexRow)`
   min-width: 278px;
   justify-content: space-evenly;
   text-decoration: none;
@@ -69,4 +70,5 @@ const SearchIcon = styled(BsSearch)`
   margin-left: 14px;
   color: ${GLOBAL_COLOR.GRAY_2};
 `;
+
 export default GNBHeader;

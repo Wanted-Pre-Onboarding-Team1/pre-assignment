@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import useLogin from '../../hooks/useLogin';
-import { FlexColumn } from '../../styles/commomComponents';
 import { GLOBAL_COLOR } from '../../styles/constans';
+import { FlexColumn } from '../../styles/commonComponents';
 import { Input } from '../common/Input';
+import instagramImage from '../../assets/images/instagram.png';
 
 const LoginFormBox = () => {
   const {
@@ -15,7 +16,7 @@ const LoginFormBox = () => {
     onCheckPw,
   } = useLogin();
 
-  const disable =
+  const disableCondition =
     !isValidated.email ||
     !isValidated.pw ||
     !emailRef?.current?.value.length ||
@@ -23,7 +24,7 @@ const LoginFormBox = () => {
 
   return (
     <form onSubmit={onLogin}>
-      <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
+      <Logo src={instagramImage} />
       <FlexColumn>
         <Input
           type="text"
@@ -46,20 +47,18 @@ const LoginFormBox = () => {
         type="submit"
         value="로그인"
         onClick={onLogin}
-        disabled={disable}
+        disabled={disableCondition}
       />
-      <div onClick={onLogin}></div>
     </form>
   );
 };
 
 const Logo = styled.img`
   padding: 30px;
+  width: 250px;
 `;
-
 const LoginBtn = styled.input`
   width: 250px;
-
   height: 28px;
   margin: 10px;
   font-weight: 600;
@@ -71,4 +70,5 @@ const LoginBtn = styled.input`
     background-color: #bde5ff;
   }
 `;
+
 export default React.memo(LoginFormBox);

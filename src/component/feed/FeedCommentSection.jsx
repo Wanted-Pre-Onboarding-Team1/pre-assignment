@@ -1,39 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
-import useCommentForm from '../../hooks/useCommentForm';
-import { COMMENT_ICONS } from '../../libs/constans';
 import { AiOutlineSmile } from 'react-icons/ai';
 import { FiSave } from 'react-icons/fi';
-import { FlexBox } from '../../styles/commomComponents';
-import { NickNameStyled } from './FeedSection';
 import { GLOBAL_COLOR } from '../../styles/constans';
+import useCommentForm from '../../hooks/useCommentForm';
+import { COMMENT_ICONS } from '../../libs/constans';
+import { FlexRow } from '../../styles/commonComponents';
+import { NickName } from './FeedSection';
 
 const FeedCommentSection = (props) => {
   const { likes, comments } = props;
-  const { commentList, nowComment, onChangeCommnet, onSummitComment } =
+  const { commentList, nowComment, onChangeCommnet, onSubmitComment } =
     useCommentForm(comments);
+
   return (
     <CommentContainer>
       <CommentIconSection>
-        <FlexBox>
+        <FlexRow>
           {COMMENT_ICONS.map(({ icon }, index) => (
             <div key={`${icon}_${index}`}>
               <CommentIcon>{icon}</CommentIcon>
             </div>
           ))}
-        </FlexBox>
+        </FlexRow>
         <CommentIcon>
           <FiSave size={24} />
         </CommentIcon>
       </CommentIconSection>
       <LikeCount>좋아요 {likes}개</LikeCount>
-      {commentList?.map((comment, index) => (
-        <CommentList key={`${comment.id}_${index}`}>
-          <NickNameStyled>{comment.userName}</NickNameStyled>
-          <div>{comment.text}</div>
+      {commentList?.map(({ id, userName, text }, index) => (
+        <CommentList key={`${id}_${index}`}>
+          <NickName>{userName}</NickName>
+          <div>{text}</div>
         </CommentList>
       ))}
-      <CommentPostBox onSubmit={onSummitComment}>
+      <CommentPostBox onSubmit={onSubmitComment}>
         <AiOutlineSmile size={24} />
         <CommentInput
           name="text"
@@ -41,20 +42,19 @@ const FeedCommentSection = (props) => {
           value={nowComment.text}
           placeholder="댓글달기..."
         />
-        <CommentSummitBtn type="submit" value="게시" />
+        <CommentSubmitBtn type="submit" value="게시" />
       </CommentPostBox>
     </CommentContainer>
   );
 };
+
 const CommentIconSection = styled.section`
   display: flex;
   justify-content: space-between;
 `;
-
 const CommentIcon = styled.div`
   padding-right: 16px;
 `;
-
 const CommentContainer = styled.div`
   padding: 8px 8px 0px 8px;
 `;
@@ -69,7 +69,7 @@ const CommentList = styled.div`
   font-size: 14px;
   align-items: center;
 `;
-const CommentSummitBtn = styled.input`
+const CommentSubmitBtn = styled.input`
   width: 32px;
   font-weight: bold;
   color: #6495ed;
@@ -91,4 +91,5 @@ const CommentInput = styled.input`
     font-size: 12px;
   }
 `;
+
 export default React.memo(FeedCommentSection);

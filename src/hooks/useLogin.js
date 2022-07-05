@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUsersAPI } from '../libs/api/userAPI';
+import { getDataAPI } from '../libs/api/getDataAPI';
 import userStorage from '../libs/utils/userStorage';
 import useValidation from './useValidation';
 
@@ -17,25 +16,28 @@ export default function useLogin() {
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getUsersAPI();
+      const data = await getDataAPI('user');
       setUserList(data);
     };
     getData();
   }, []);
 
-  const onLogin = () => {
+  const onLogin = (event) => {
+    event.preventDefault();
     try {
       const result = userList.filter(
         (user) => user.userName === email && user.password === password
-      );
-      if (result.length !== 0) {
-        userStorage.set(email);
-      } else throw new Error('등록되지 않은 이메일 또는 비밀번호입니다.');
-      navigate('/feed');
-    } catch (error) {
-      alert(error);
-    }
-  };
+        );
+        if (shouldStoreUser(result)) {
+          userStorage.set(email);
+        } else throw new Error('등록되지 않은 이메일 또는 비밀번호입니다.');
+        navigate('/feed');
+      } catch (error) {
+        alert(error);
+      }
+    };
+
+  const shouldStoreUser = (result) => result.length !== 0;
 
   return {
     emailRef,
