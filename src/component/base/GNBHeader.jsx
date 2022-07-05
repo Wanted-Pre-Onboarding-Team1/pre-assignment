@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Input } from '../common/Input';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexBox } from '../../styles/commonComponents';
 import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';

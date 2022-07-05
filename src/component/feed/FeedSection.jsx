@@ -2,7 +2,7 @@ import React from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import styled from 'styled-components';
 import useLazyCheck from '../../hooks/useLazyCheck';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexBox } from '../../styles/commonComponents';
 import Img from '../common/Image';
 import FeedCommentSection from './FeedCommentSection';
 
@@ -58,7 +58,7 @@ const WriterInfo = styled(FlexBox)`
   align-items: center;
 `;
 
-const FeedBox = styled.div`
+const FeedBox = styled.section`
   margin-top: 20px;
   border: 1px solid #dbdbdb;
   border-radius: 4px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexBox } from '../../styles/commonComponents';
 
 function RegisterBox() {
   return (

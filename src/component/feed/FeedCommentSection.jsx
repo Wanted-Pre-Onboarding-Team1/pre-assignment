@@ -4,7 +4,7 @@ import useCommentForm from '../../hooks/useCommentForm';
 import { COMMENT_ICONS } from '../../libs/constans';
 import { AiOutlineSmile } from 'react-icons/ai';
 import { FiSave } from 'react-icons/fi';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexBox } from '../../styles/commonComponents';
 import { NickNameStyled } from './FeedSection';
 
 const FeedCommentSection = (props) => {

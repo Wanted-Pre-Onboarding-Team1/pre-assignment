@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useLogin from '../../hooks/useLogin';
-import { FlexColumn } from '../../styles/commomComponents';
+import { FlexColumn } from '../../styles/commonComponents';
 import { Input } from '../common/Input';
 
 const LoginFormBox = () => {
@@ -13,7 +13,7 @@ const LoginFormBox = () => {
     onCheckEmail,
     onCheckPw,
   } = useLogin();
-  
+
   const disable =
     !isValidated.email ||
     !isValidated.pw ||
@@ -47,7 +47,6 @@ const LoginFormBox = () => {
         onClick={onLogin}
         disabled={disable}
       />
-      <div onClick={onLogin}>asd</div>
     </form>
   );
 };
