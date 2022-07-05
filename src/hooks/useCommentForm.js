@@ -9,7 +9,6 @@ function useCommentForm(initailCommentList) {
     const { name, value } = e.target;
     setNowComment({ ...nowComment, [name]: value });
   };
-  console.log(commentList);
 
   const onSummitComment = (e) => {
     e.preventDefault();

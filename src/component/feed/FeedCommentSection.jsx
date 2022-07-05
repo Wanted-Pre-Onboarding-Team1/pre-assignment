@@ -6,6 +6,7 @@ import { AiOutlineSmile } from 'react-icons/ai';
 import { FiSave } from 'react-icons/fi';
 import { FlexBox } from '../../styles/commomComponents';
 import { NickNameStyled } from './FeedSection';
+import { GLOBAL_COLOR } from '../../styles/constans';
 
 const FeedCommentSection = (props) => {
   const { likes, comments } = props;
@@ -59,7 +60,7 @@ const CommentContainer = styled.div`
 `;
 const LikeCount = styled.p`
   padding: 16px 0 32px 0;
-  color: #343434;
+  color: ${GLOBAL_COLOR.GRAY_3};
   font-weight: 700;
   font-size: 14px;
 `;

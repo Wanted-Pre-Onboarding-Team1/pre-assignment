@@ -6,6 +6,7 @@ import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';
 import { ICON_ITEMS } from '../../libs/constans';
+import { GLOBAL_COLOR } from '../../styles/constans';
 
 const GNBHeader = () => {
   return (
@@ -45,8 +46,8 @@ const Header = styled.header`
   height: 60px;
   justify-content: space-between;
   padding: 0 30px;
-  background-color: #ffff;
-  border: 1px solid #e5e5e5;
+  background-color: ${GLOBAL_COLOR.WHITE};
+  border: 1px solid ${GLOBAL_COLOR.BORDER};
 `;
 const IconBox = styled(FlexBox)`
   min-width: 278px;
@@ -66,6 +67,6 @@ const SearchIcon = styled(BsSearch)`
   position: absolute;
   top: 24px;
   margin-left: 14px;
-  color: #8d8d8d;
+  color: ${GLOBAL_COLOR.GRAY_2};
 `;
 export default GNBHeader;

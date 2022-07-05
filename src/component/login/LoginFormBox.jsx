@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import useLogin from '../../hooks/useLogin';
 import { FlexColumn } from '../../styles/commomComponents';
+import { GLOBAL_COLOR } from '../../styles/constans';
 import { Input } from '../common/Input';
 
 const LoginFormBox = () => {
@@ -13,7 +14,7 @@ const LoginFormBox = () => {
     onCheckEmail,
     onCheckPw,
   } = useLogin();
-  
+
   const disable =
     !isValidated.email ||
     !isValidated.pw ||
@@ -47,7 +48,7 @@ const LoginFormBox = () => {
         onClick={onLogin}
         disabled={disable}
       />
-      <div onClick={onLogin}>asd</div>
+      <div onClick={onLogin}></div>
     </form>
   );
 };
@@ -63,7 +64,7 @@ const LoginBtn = styled.input`
   margin: 10px;
   font-weight: 600;
   background-color: #0095f6;
-  color: #ffff;
+  color: ${GLOBAL_COLOR.WHITE};
   border-radius: 4px;
   cursor: pointer;
   :disabled {

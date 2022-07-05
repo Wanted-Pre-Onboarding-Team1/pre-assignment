@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FlexBox } from '../../styles/commomComponents';
 import { AiFillFacebook } from 'react-icons/ai';
+import { GLOBAL_COLOR } from '../../styles/constans';
 
 function SubLoginBox() {
   return (
@@ -22,13 +23,13 @@ function SubLoginBox() {
 
 const HalfHr = styled.hr`
   height: 1px;
-  background-color: #e5e5e5;
+  background-color: ${GLOBAL_COLOR.BORDER};
   width: 30%;
 `;
 
 const CloudyString = styled.div`
   font-size: 13px;
-  color: #777777;
+  color: ${GLOBAL_COLOR.GRAY_4};
 `;
 
 const FacebookH3 = styled.h3`

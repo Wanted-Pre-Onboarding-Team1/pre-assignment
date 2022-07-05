@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import RegisterBox, { RegisterString } from '../component/login/RegisterBox';
 import SubLoginBox from '../component/login/SubLoginBox';
 import LoginFormBox from '../component/login/LoginFormBox';
+import { GLOBAL_COLOR } from '../styles/constans';
 const LoginPage = () => {
   return (
     <LoginLayout>
@@ -25,8 +26,8 @@ const LoginLayout = styled.div`
   padding: 40px;
 `;
 const ElementBox = styled.div`
-  background-color: #ffff;
-  border: 1px solid #e5e5e5;
+  background-color: ${GLOBAL_COLOR.WHITE};
+  border: 1px solid ${GLOBAL_COLOR.BORDER};
   margin-bottom: 10px;
 `;
 export default LoginPage;

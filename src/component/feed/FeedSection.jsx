@@ -3,6 +3,7 @@ import { FiMoreHorizontal, FiSave } from 'react-icons/fi';
 import styled from 'styled-components';
 import useLazyCheck from '../../hooks/useLazyCheck';
 import { FlexBox } from '../../styles/commomComponents';
+import { GLOBAL_COLOR } from '../../styles/constans';
 import Img from '../common/Image';
 import FeedCommentSection from './FeedCommentSection';
 
@@ -45,7 +46,7 @@ const EleBox = styled.div`
   margin: 10px;
 `;
 export const NickNameStyled = styled.p`
-  color: #343434;
+  color: ${GLOBAL_COLOR.GRAY_3};
   margin: 4px 10px;
   font-weight: 800;
 `;
@@ -62,7 +63,7 @@ const FeedBox = styled.div`
   margin-top: 20px;
   border: 1px solid #dbdbdb;
   border-radius: 4px;
-  background-color: white;
+  background-color: ${GLOBAL_COLOR.WHITE};
   display: ${({ isLoading }) => (isLoading ? 'none' : 'block')};
 `;
 
