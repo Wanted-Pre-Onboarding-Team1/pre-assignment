@@ -6,8 +6,12 @@ function useFeedLoad() {
 
   useEffect(() => {
     const getFeeds = async () => {
-      const response = await getFeedsAPI();
-      setFeeds(response.data);
+      try {
+        const response = await getFeedsAPI();
+        setFeeds(response.data);
+      } catch (error) {
+        alert('피드를 불러오는데 실패했습니다.');
+      }
     };
     getFeeds();
   }, []);
