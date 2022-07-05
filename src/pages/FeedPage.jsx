@@ -6,9 +6,9 @@ import useObserverFeed from '../hooks/useObserverFeed';
 
 const FeedPage = () => {
   const { feeds } = useFeedLoad();
-  const { ref } = useObserverFeed(useFeedLoad);
+  const { element } = useObserverFeed(useFeedLoad);
   const feedArr = feeds?.map((feed, index) => (
-    <FeedSection feedData={feed} key={`${feed.id}_${index}`} ref={ref} />
+    <FeedSection ref={element} feedData={feed} key={`${feed.id}_${index}`} />
   ));
 
   return <FeedsWrapper>{feedArr}</FeedsWrapper>;

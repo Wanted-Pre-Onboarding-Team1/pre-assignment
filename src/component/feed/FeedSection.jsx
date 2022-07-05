@@ -6,13 +6,14 @@ import { GLOBAL_COLOR } from '../../styles/constans';
 import { FlexRow } from '../../styles/commonComponents';
 import Img from '../common/Image';
 import FeedCommentSection from './FeedCommentSection';
+import { forwardRef } from 'react';
 
-const FeedSection = (props) => {
-  const { userName, img, likes, comments } = props.feedData;
+const FeedSection = React.forwardRef(({ feedData }, ref) => {
+  const { userName, img, likes, comments } = feedData;
   const { isFeedimg, isUserImg, onChangeLoading } = useLazyCheck();
 
   return (
-    <FeedContainer isLoading={isFeedimg || isUserImg}>
+    <FeedContainer isLoading={isFeedimg || isUserImg} ref={ref}>
       <WriterInfo>
         <FlexRow>
           <ElementBox>
@@ -40,7 +41,9 @@ const FeedSection = (props) => {
       <FeedCommentSection comments={comments} likes={likes} />
     </FeedContainer>
   );
-};
+});
+
+FeedSection.displayName = 'Search';
 
 const ElementBox = styled.div`
   margin: 10px;

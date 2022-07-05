@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { forwardRef, useRef } from 'react';
 
 const useObserverFeed = (callback) => {
   const element = useRef(null);
@@ -22,7 +22,7 @@ const useObserverFeed = (callback) => {
     return () => observer.disconnect();
   }, []);
 
-  return { ref: element };
+  return { element };
 };
 
 export default useObserverFeed;
