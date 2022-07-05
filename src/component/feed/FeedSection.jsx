@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react';
-import { FiMoreHorizontal, FiSave } from 'react-icons/fi';
+import React from 'react';
 import styled from 'styled-components';
+import { FiMoreHorizontal } from 'react-icons/fi';
 import useLazyCheck from '../../hooks/useLazyCheck';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commomComponents';
 import Img from '../common/Image';
 import FeedCommentSection from './FeedCommentSection';
 
@@ -11,22 +11,22 @@ const FeedSection = (props) => {
   const { isFeedimg, isUserImg, onChangeLoading } = useLazyCheck();
 
   return (
-    <FeedBox isLoading={isFeedimg || isUserImg}>
+    <FeedContainer isLoading={isFeedimg || isUserImg}>
       <WriterInfo>
-        <FlexBox>
-          <EleBox>
+        <FlexRow>
+          <ElementBox>
             <Img
               name="userImg"
               src="https://source.unsplash.com/random/32x32"
               alt="유저 이미지"
               onCheckLazy={onChangeLoading}
             />
-          </EleBox>
-          <NickNameStyled>{userName}</NickNameStyled>
-        </FlexBox>
-        <EleBox>
+          </ElementBox>
+          <NickName>{userName}</NickName>
+        </FlexRow>
+        <ElementBox>
           <FiMoreHorizontal size={24} />
-        </EleBox>
+        </ElementBox>
       </WriterInfo>
       <div>
         <Img
@@ -37,28 +37,26 @@ const FeedSection = (props) => {
         />
       </div>
       <FeedCommentSection comments={comments} likes={likes} />
-    </FeedBox>
+    </FeedContainer>
   );
 };
 
-const EleBox = styled.div`
+const ElementBox = styled.div`
   margin: 10px;
 `;
-export const NickNameStyled = styled.p`
+export const NickName = styled.p`
   color: #343434;
   margin: 4px 10px;
   font-weight: 800;
 `;
-
-const WriterInfo = styled(FlexBox)`
+const WriterInfo = styled(FlexRow)`
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 48px;
   align-items: center;
 `;
-
-const FeedBox = styled.div`
+const FeedContainer = styled.div`
   margin-top: 20px;
   border: 1px solid #dbdbdb;
   border-radius: 4px;

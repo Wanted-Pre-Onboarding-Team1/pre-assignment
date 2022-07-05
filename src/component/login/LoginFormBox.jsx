@@ -15,7 +15,8 @@ const LoginFormBox = () => {
     onCheckPw,
   } = useLogin();
 
-  const disable =
+
+  const disableCondition =
     !isValidated.email ||
     !isValidated.pw ||
     !emailRef?.current?.value.length ||
@@ -46,7 +47,7 @@ const LoginFormBox = () => {
         type="submit"
         value="로그인"
         onClick={onLogin}
-        disabled={disable}
+        disabled={disableCondition}
       />
     </form>
   );
@@ -56,10 +57,8 @@ const Logo = styled.img`
   padding: 30px;
   width: 250px;
 `;
-
 const LoginBtn = styled.input`
   width: 250px;
-
   height: 28px;
   margin: 10px;
   font-weight: 600;
@@ -71,4 +70,5 @@ const LoginBtn = styled.input`
     background-color: #bde5ff;
   }
 `;
+
 export default React.memo(LoginFormBox);
