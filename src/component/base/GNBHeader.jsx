@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Input } from '../common/Input';
-import { FlexBox } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commomComponents';
 import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';
@@ -48,7 +48,7 @@ const Header = styled.header`
   background-color: #ffff;
   border: 1px solid #e5e5e5;
 `;
-const IconBox = styled(FlexBox)`
+const IconBox = styled(FlexRow)`
   min-width: 278px;
   justify-content: space-evenly;
   text-decoration: none;
@@ -68,4 +68,5 @@ const SearchIcon = styled(BsSearch)`
   margin-left: 14px;
   color: #8d8d8d;
 `;
+
 export default GNBHeader;

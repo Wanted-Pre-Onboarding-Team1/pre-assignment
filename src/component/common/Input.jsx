@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import styled, { css } from 'styled-components';
 
 export const Input = memo(

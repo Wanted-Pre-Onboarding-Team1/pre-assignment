@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import RegisterBox, { RegisterString } from '../component/login/RegisterBox';
+import RegisterBox, { RegisterGuide } from '../component/login/RegisterBox';
 import SubLoginBox from '../component/login/SubLoginBox';
 import LoginFormBox from '../component/login/LoginFormBox';
+
 const LoginPage = () => {
   return (
     <LoginLayout>
@@ -13,7 +14,7 @@ const LoginPage = () => {
       <ElementBox>
         <RegisterBox />
       </ElementBox>
-      <RegisterString>앱을 다운로드 하세요.</RegisterString>
+      <DownloadGuide>앱을 다운로드 하세요.</DownloadGuide>
     </LoginLayout>
   );
 };
@@ -29,4 +30,6 @@ const ElementBox = styled.div`
   border: 1px solid #e5e5e5;
   margin-bottom: 10px;
 `;
+const DownloadGuide = styled(RegisterGuide)``;
+
 export default LoginPage;

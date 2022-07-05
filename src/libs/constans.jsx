@@ -1,9 +1,9 @@
+import React from 'react';
 import { FiSend } from 'react-icons/fi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { GiNothingToSay } from 'react-icons/gi';
 import { AiFillHome } from 'react-icons/ai';
 import { BsPlusSquare } from 'react-icons/bs';
-import React from 'react';
 import UserIcon from '../component/common/UserIcon';
 import userStorage from './utils/userStorage';
 
