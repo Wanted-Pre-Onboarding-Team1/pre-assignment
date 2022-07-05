@@ -6,7 +6,6 @@ import { GLOBAL_COLOR } from '../../styles/constans';
 import { FlexRow } from '../../styles/commonComponents';
 import Img from '../common/Image';
 import FeedCommentSection from './FeedCommentSection';
-import { forwardRef } from 'react';
 
 const FeedSection = React.forwardRef(({ feedData }, ref) => {
   const { userName, img, likes, comments } = feedData;
