@@ -10,7 +10,7 @@ import { NickName } from './FeedSection';
 
 const FeedCommentSection = (props) => {
   const { likes, comments } = props;
-  const { commentList, nowComment, onChangeCommnet, onSubmitComment } =
+  const { commentList, nowComment, onChangeComment, onSubmitComment } =
     useCommentForm(comments);
 
   return (
@@ -38,7 +38,7 @@ const FeedCommentSection = (props) => {
         <AiOutlineSmile size={24} />
         <CommentInput
           name="text"
-          onChange={onChangeCommnet}
+          onChange={onChangeComment}
           value={nowComment.text}
           placeholder="댓글달기..."
         />
