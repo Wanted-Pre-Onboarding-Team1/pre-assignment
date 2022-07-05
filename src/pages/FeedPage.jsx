@@ -7,13 +7,11 @@ import useObserverFeed from '../hooks/useObserverFeed';
 const FeedPage = () => {
   const { feeds } = useFeedLoad();
   const { ref } = useObserverFeed(useFeedLoad);
-  return (
-    <FeedsWrapper>
-      {feeds?.map((feed, index) => (
-        <FeedSection feedData={feed} key={`${feed.id}_${index}`} ref={ref} />
-      ))}
-    </FeedsWrapper>
-  );
+  const feedArr = feeds?.map((feed, index) => (
+    <FeedSection feedData={feed} key={`${feed.id}_${index}`} ref={ref} />
+  ));
+
+  return <FeedsWrapper>{feedArr}</FeedsWrapper>;
 };
 
 const FeedsWrapper = styled.div`
