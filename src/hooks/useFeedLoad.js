@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { getFeedsAPI } from '../libs/api/feedAPI';
+import { getDataAPI } from '../libs/api/getDataAPI';
 
 function useFeedLoad() {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
     const getFeeds = async () => {
-      const response = await getFeedsAPI();
-      setFeeds(response.data);
+      const response = await getDataAPI('feed');
+      setFeeds(response);
     };
     getFeeds();
   }, []);

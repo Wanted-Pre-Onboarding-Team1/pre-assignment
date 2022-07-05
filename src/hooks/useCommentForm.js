@@ -12,10 +12,12 @@ function useCommentForm(initailCommentList) {
 
   const onSubmitComment = (event) => {
     event.preventDefault();
-    if (nowComment.text === '') return;
+    if (shouldChangeCmtState(nowComment)) return;
     setCommentList([...commentList, nowComment]);
     setNowComment(INITIAL_COMMENT_STATE);
   };
+
+  const shouldChangeCmtState = (condition) => condition.text === '';
 
   return { nowComment, onChangeCommnet, onSubmitComment, commentList };
 }

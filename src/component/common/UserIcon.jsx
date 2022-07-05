@@ -4,12 +4,12 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import userStorage from '../../libs/utils/userStorage';
 
 const UserIcon = () => {
-  const [user, setUser] = useState({ email: '' });
+  const [user, setUser] = useState('');
   const navigate = useNavigate();
 
   const onLogout = useCallback(() => {
     userStorage.remove();
-    setUser({ email: '' });
+    setUser('');
   }, []);
 
   useEffect(() => {

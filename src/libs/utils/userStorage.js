@@ -1,10 +1,12 @@
 export const USER_STORAGE_KEY = 'user';
 
+const isUserPresence = (user) => user == null;
+
 const userStorage = {
   get() {
     const user = localStorage.getItem(USER_STORAGE_KEY);
     try {
-      if (!user) return null;
+      if (isUserPresence(user)) return null;
       const parsedUser = JSON.parse(user);
       return parsedUser;
     } catch (error) {
