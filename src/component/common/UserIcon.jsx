@@ -5,7 +5,7 @@ import userStorage from '../../libs/utils/userStorage';
 
 const UserIcon = () => {
   const [user, setUser] = useState({ email: '' });
-  const nvaigate = useNavigate();
+  const navigate = useNavigate();
 
   const onLogout = useCallback(() => {
     userStorage.remove();
@@ -15,7 +15,7 @@ const UserIcon = () => {
   useEffect(() => {
     const userParser = userStorage.get();
     setUser(userParser);
-    userParser ? nvaigate('/feed') : nvaigate('/');
+    userParser ? navigate('/feed') : navigate('/');
   }, [user]);
 
   return <FaRegUserCircle size={20} onClick={onLogout} />;
