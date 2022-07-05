@@ -23,7 +23,8 @@ export default function useLogin() {
     getData();
   }, []);
 
-  const onLogin = () => {
+  const onLogin = (event) => {
+    event.preventDefault();
     try {
       const result = userList.filter(
         (user) => user.userName === email && user.password === password
