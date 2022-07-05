@@ -4,6 +4,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import userStorage from '../../libs/utils/userStorage';
 
 const UserIcon = () => {
+
   const [user, setUser] = useState('');
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ const UserIcon = () => {
   }, []);
 
   useEffect(() => {
+
     const parsedUser = userStorage.get();
     setUser(parsedUser);
     parsedUser ? navigate('/feed') : navigate('/');
