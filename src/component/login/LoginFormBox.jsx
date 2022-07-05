@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useLogin from '../../hooks/useLogin';
 import { FlexColumn } from '../../styles/commomComponents';
 import { Input } from '../common/Input';
+import instagramImage from '../../assets/images/instagram.png';
 
 const LoginFormBox = () => {
   const {
@@ -13,7 +14,7 @@ const LoginFormBox = () => {
     onCheckEmail,
     onCheckPw,
   } = useLogin();
-  
+
   const disable =
     !isValidated.email ||
     !isValidated.pw ||
@@ -22,7 +23,7 @@ const LoginFormBox = () => {
 
   return (
     <form onSubmit={onLogin}>
-      <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
+      <Logo src={instagramImage} />
       <FlexColumn>
         <Input
           type="text"
@@ -47,13 +48,13 @@ const LoginFormBox = () => {
         onClick={onLogin}
         disabled={disable}
       />
-      <div onClick={onLogin}>asd</div>
     </form>
   );
 };
 
 const Logo = styled.img`
   padding: 30px;
+  width: 250px;
 `;
 
 const LoginBtn = styled.input`

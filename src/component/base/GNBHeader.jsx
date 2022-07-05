@@ -6,12 +6,13 @@ import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';
 import { ICON_ITEMS } from '../../libs/constans';
+import instagramImage from '../../assets/images/instagram.png';
 
 const GNBHeader = () => {
   return (
     <>
       <Header>
-        <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
+        <Logo src={instagramImage} />
         <SearchBox>
           <SearchIcon size={12} />
           <SearchInput
@@ -34,7 +35,7 @@ const GNBHeader = () => {
 };
 
 const Logo = styled.img`
-  height: 30px;
+  height: 40px;
 `;
 const Header = styled.header`
   position: sticky;
