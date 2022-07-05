@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import useCommentForm from '../../hooks/useCommentForm';
-import { COMMENT_ICONS } from '../../libs/constans';
 import { AiOutlineSmile } from 'react-icons/ai';
 import { FiSave } from 'react-icons/fi';
-import { FlexBox } from '../../styles/commomComponents';
-import { NickNameStyled } from './FeedSection';
+import useCommentForm from '../../hooks/useCommentForm';
+import { COMMENT_ICONS } from '../../libs/constans';
+import { FlexRow } from '../../styles/commomComponents';
+import { NickName } from './FeedSection';
 
 const FeedCommentSection = (props) => {
   const { likes, comments } = props;
@@ -15,13 +15,13 @@ const FeedCommentSection = (props) => {
   return (
     <CommentContainer>
       <CommentIconSection>
-        <FlexBox>
+        <FlexRow>
           {COMMENT_ICONS.map(({ icon }, index) => (
             <div key={`${icon}_${index}`}>
               <CommentIcon>{icon}</CommentIcon>
             </div>
           ))}
-        </FlexBox>
+        </FlexRow>
         <CommentIcon>
           <FiSave size={24} />
         </CommentIcon>
@@ -29,7 +29,7 @@ const FeedCommentSection = (props) => {
       <LikeCount>좋아요 {likes}개</LikeCount>
       {commentList?.map(({ id, userName, text }, index) => (
         <CommentList key={`${id}_${index}`}>
-          <NickNameStyled>{userName}</NickNameStyled>
+          <NickName>{userName}</NickName>
           <div>{text}</div>
         </CommentList>
       ))}
@@ -41,7 +41,7 @@ const FeedCommentSection = (props) => {
           value={nowComment.text}
           placeholder="댓글달기..."
         />
-        <CommentSummitBtn type="submit" value="게시" />
+        <CommentSubmitBtn type="submit" value="게시" />
       </CommentPostBox>
     </CommentContainer>
   );
@@ -68,7 +68,7 @@ const CommentList = styled.div`
   font-size: 14px;
   align-items: center;
 `;
-const CommentSummitBtn = styled.input`
+const CommentSubmitBtn = styled.input`
   width: 32px;
   font-weight: bold;
   color: #6495ed;

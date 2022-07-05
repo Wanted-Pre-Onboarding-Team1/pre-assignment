@@ -5,7 +5,7 @@ export const FlexColumn = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-export const FlexBox = styled.div`
+export const FlexRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

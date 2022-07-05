@@ -14,7 +14,7 @@ const LoginFormBox = () => {
     onCheckPw,
   } = useLogin();
 
-  const disable =
+  const disableCondition =
     !isValidated.email ||
     !isValidated.pw ||
     !emailRef?.current?.value.length ||
@@ -45,7 +45,7 @@ const LoginFormBox = () => {
         type="submit"
         value="로그인"
         onClick={onLogin}
-        disabled={disable}
+        disabled={disableCondition}
       />
       <div onClick={onLogin}>asd</div>
     </form>
