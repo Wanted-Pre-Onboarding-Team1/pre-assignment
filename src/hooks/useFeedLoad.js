@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getFeedsAPI } from '../libs/api/feedAPI';
 
 function useFeedLoad() {

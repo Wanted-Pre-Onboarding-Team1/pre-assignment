@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function useValidation() {
   const [isValidated, setIsValidated] = useState({
@@ -10,7 +10,6 @@ function useValidation() {
     const value = e.target.value;
     const emailRegex =
       /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    // 이메일 형식 검사
     if (!emailRegex.test(value)) {
       setIsValidated({ ...isValidated, email: false });
       return;
@@ -23,7 +22,6 @@ function useValidation() {
     const value = e.target.value;
     const pwRegex =
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
-    // 비밀번호 형식 검사
     if (!pwRegex.test(value)) {
       setIsValidated({ ...isValidated, pw: false });
       return;

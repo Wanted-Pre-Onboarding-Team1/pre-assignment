@@ -11,13 +11,13 @@ function useCommentForm(initailCommentList) {
   };
   console.log(commentList);
 
-  const onSummitComment = (e) => {
+  const onSubmitComment = (e) => {
     e.preventDefault();
     if (nowComment.text === '') return;
     setCommentList([...commentList, nowComment]);
     setNowComment(INITIAL_COMMENT_STATE);
   };
-  return { nowComment, onChangeCommnet, onSummitComment, commentList };
+  return { nowComment, onChangeCommnet, onSubmitComment, commentList };
 }
 
 export default useCommentForm;

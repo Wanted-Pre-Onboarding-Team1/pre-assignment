@@ -9,7 +9,7 @@ import { NickNameStyled } from './FeedSection';
 
 const FeedCommentSection = (props) => {
   const { likes, comments } = props;
-  const { commentList, nowComment, onChangeCommnet, onSummitComment } =
+  const { commentList, nowComment, onChangeCommnet, onSubmitComment } =
     useCommentForm(comments);
   return (
     <CommentContainer>
@@ -32,7 +32,7 @@ const FeedCommentSection = (props) => {
           <div>{comment.text}</div>
         </CommentList>
       ))}
-      <CommentPostBox onSubmit={onSummitComment}>
+      <CommentPostBox onSubmit={onSubmitComment}>
         <AiOutlineSmile size={24} />
         <CommentInput
           name="text"
