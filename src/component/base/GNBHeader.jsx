@@ -68,4 +68,5 @@ const SearchIcon = styled(BsSearch)`
   margin-left: 14px;
   color: #8d8d8d;
 `;
+
 export default GNBHeader;

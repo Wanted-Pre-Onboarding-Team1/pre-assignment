@@ -24,4 +24,5 @@ const RegisterLink = styled(Link)`
   font-weight: 600;
   font-size: 14px;
 `;
+
 export default React.memo(RegisterBox);

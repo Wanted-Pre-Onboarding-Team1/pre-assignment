@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 function Img({ onCheckLazy, ...props }) {
   const { name, src } = props;
+
   useEffect(() => {
     const img = new Image();
     img.src = props.src;

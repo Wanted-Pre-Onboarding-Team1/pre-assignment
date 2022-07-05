@@ -13,7 +13,7 @@ const LoginFormBox = () => {
     onCheckEmail,
     onCheckPw,
   } = useLogin();
-  
+
   const disable =
     !isValidated.email ||
     !isValidated.pw ||
@@ -55,10 +55,8 @@ const LoginFormBox = () => {
 const Logo = styled.img`
   padding: 30px;
 `;
-
 const LoginBtn = styled.input`
   width: 250px;
-
   height: 28px;
   margin: 10px;
   font-weight: 600;
@@ -70,4 +68,5 @@ const LoginBtn = styled.input`
     background-color: #bde5ff;
   }
 `;
+
 export default React.memo(LoginFormBox);

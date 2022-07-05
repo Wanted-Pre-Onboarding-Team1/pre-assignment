@@ -5,6 +5,7 @@ import FeedSection from '../component/feed/FeedSection';
 
 const FeedPage = () => {
   const { feeds } = useFeedLoad();
+
   return (
     <FeedsWrapper>
       {feeds?.map((feed, index) => (

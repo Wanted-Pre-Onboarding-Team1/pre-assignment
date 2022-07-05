@@ -25,12 +25,10 @@ const HalfHr = styled.hr`
   background-color: #e5e5e5;
   width: 30%;
 `;
-
 const CloudyString = styled.div`
   font-size: 13px;
   color: #777777;
 `;
-
 const FacebookH3 = styled.h3`
   color: #385185;
   font-size: 13px;

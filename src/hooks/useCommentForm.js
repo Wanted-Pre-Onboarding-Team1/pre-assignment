@@ -5,18 +5,18 @@ function useCommentForm(initailCommentList) {
   const [commentList, setCommentList] = useState(initailCommentList);
   const [nowComment, setNowComment] = useState(INITIAL_COMMENT_STATE);
 
-  const onChangeCommnet = (e) => {
-    const { name, value } = e.target;
+  const onChangeCommnet = (event) => {
+    const { name, value } = event.target;
     setNowComment({ ...nowComment, [name]: value });
   };
-  console.log(commentList);
 
-  const onSubmitComment = (e) => {
-    e.preventDefault();
+  const onSubmitComment = (event) => {
+    event.preventDefault();
     if (nowComment.text === '') return;
     setCommentList([...commentList, nowComment]);
     setNowComment(INITIAL_COMMENT_STATE);
   };
+
   return { nowComment, onChangeCommnet, onSubmitComment, commentList };
 }
 

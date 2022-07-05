@@ -49,7 +49,6 @@ export const NickNameStyled = styled.p`
   margin: 4px 10px;
   font-weight: 800;
 `;
-
 const WriterInfo = styled(FlexBox)`
   display: flex;
   justify-content: space-between;
@@ -57,7 +56,6 @@ const WriterInfo = styled(FlexBox)`
   height: 48px;
   align-items: center;
 `;
-
 const FeedBox = styled.div`
   margin-top: 20px;
   border: 1px solid #dbdbdb;

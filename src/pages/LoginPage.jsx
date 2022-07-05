@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import RegisterBox, { RegisterString } from '../component/login/RegisterBox';
 import SubLoginBox from '../component/login/SubLoginBox';
 import LoginFormBox from '../component/login/LoginFormBox';
+
 const LoginPage = () => {
   return (
     <LoginLayout>

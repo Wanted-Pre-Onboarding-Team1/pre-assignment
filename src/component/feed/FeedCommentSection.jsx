@@ -11,6 +11,7 @@ const FeedCommentSection = (props) => {
   const { likes, comments } = props;
   const { commentList, nowComment, onChangeCommnet, onSubmitComment } =
     useCommentForm(comments);
+
   return (
     <CommentContainer>
       <CommentIconSection>
@@ -26,10 +27,10 @@ const FeedCommentSection = (props) => {
         </CommentIcon>
       </CommentIconSection>
       <LikeCount>좋아요 {likes}개</LikeCount>
-      {commentList?.map((comment, index) => (
-        <CommentList key={`${comment.id}_${index}`}>
-          <NickNameStyled>{comment.userName}</NickNameStyled>
-          <div>{comment.text}</div>
+      {commentList?.map(({ id, userName, text }, index) => (
+        <CommentList key={`${id}_${index}`}>
+          <NickNameStyled>{userName}</NickNameStyled>
+          <div>{text}</div>
         </CommentList>
       ))}
       <CommentPostBox onSubmit={onSubmitComment}>
@@ -45,15 +46,14 @@ const FeedCommentSection = (props) => {
     </CommentContainer>
   );
 };
+
 const CommentIconSection = styled.section`
   display: flex;
   justify-content: space-between;
 `;
-
 const CommentIcon = styled.div`
   padding-right: 16px;
 `;
-
 const CommentContainer = styled.div`
   padding: 8px 8px 0px 8px;
 `;
@@ -90,4 +90,5 @@ const CommentInput = styled.input`
     font-size: 12px;
   }
 `;
+
 export default React.memo(FeedCommentSection);
