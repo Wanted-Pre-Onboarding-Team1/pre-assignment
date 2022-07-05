@@ -1,5 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import styled, { css } from 'styled-components';
+import { GLOBAL_COLOR } from '../../styles/constans';
 
 export const Input = memo(
   forwardRef(
@@ -41,17 +42,17 @@ const InputStyled = styled.input`
     variant === 'primary'
       ? css`
           padding: 6px 0 2px 8px;
-          background-color: #fafafa;
+          background-color: ${GLOBAL_COLOR.WHITE};
         `
       : variant === 'secondary'
       ? css`
           max-width: 250px;
           padding: 6px 0 2px 34px;
-          background-color: #eaeaea;
+          background-color: ${GLOBAL_COLOR.GRAY_1};
           border: none;
           max-width: 250px;
           ::placeholder {
-            color: #8d8d8d;
+            color: ${GLOBAL_COLOR.GRAY_2};
           }
         `
       : null}

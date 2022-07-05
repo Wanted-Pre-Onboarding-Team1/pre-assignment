@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useLogin from '../../hooks/useLogin';
+import { GLOBAL_COLOR } from '../../styles/constans';
 import { FlexColumn } from '../../styles/commonComponents';
 import { Input } from '../common/Input';
 import instagramImage from '../../assets/images/instagram.png';
@@ -14,7 +15,6 @@ const LoginFormBox = () => {
     onCheckEmail,
     onCheckPw,
   } = useLogin();
-
 
   const disableCondition =
     !isValidated.email ||
@@ -63,7 +63,7 @@ const LoginBtn = styled.input`
   margin: 10px;
   font-weight: 600;
   background-color: #0095f6;
-  color: #ffff;
+  color: ${GLOBAL_COLOR.WHITE};
   border-radius: 4px;
   cursor: pointer;
   :disabled {

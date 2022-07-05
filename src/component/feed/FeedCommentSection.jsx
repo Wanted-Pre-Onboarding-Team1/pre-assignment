@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineSmile } from 'react-icons/ai';
 import { FiSave } from 'react-icons/fi';
+import { GLOBAL_COLOR } from '../../styles/constans';
 import useCommentForm from '../../hooks/useCommentForm';
 import { COMMENT_ICONS } from '../../libs/constans';
 import { FlexRow } from '../../styles/commonComponents';
@@ -59,7 +60,7 @@ const CommentContainer = styled.div`
 `;
 const LikeCount = styled.p`
   padding: 16px 0 32px 0;
-  color: #343434;
+  color: ${GLOBAL_COLOR.GRAY_3};
   font-weight: 700;
   font-size: 14px;
 `;
