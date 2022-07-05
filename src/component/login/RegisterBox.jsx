@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FlexRow } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 
 function RegisterBox() {
   return (

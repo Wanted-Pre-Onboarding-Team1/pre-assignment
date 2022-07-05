@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useLogin from '../../hooks/useLogin';
-import { FlexColumn } from '../../styles/commomComponents';
+import { FlexColumn } from '../../styles/commonComponents';
 import { Input } from '../common/Input';
 import instagramImage from '../../assets/images/instagram.png';
 

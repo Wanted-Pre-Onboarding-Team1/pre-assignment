@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexRow } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 import { AiFillFacebook } from 'react-icons/ai';
 
 function SubLoginBox() {
@@ -25,7 +25,8 @@ const HalfHr = styled.hr`
   background-color: #e5e5e5;
   width: 30%;
 `;
-const CloudyString = styled.div`
+
+const CloudyString = styled.p`
   font-size: 13px;
   color: #777777;
 `;
