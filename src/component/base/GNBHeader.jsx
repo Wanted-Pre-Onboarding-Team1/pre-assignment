@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Input } from '../common/Input';
-import { FlexRow } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';

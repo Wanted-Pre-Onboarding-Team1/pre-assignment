@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexRow } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 import { AiFillFacebook } from 'react-icons/ai';
 
 function SubLoginBox() {

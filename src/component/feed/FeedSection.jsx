@@ -2,7 +2,7 @@ import React from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import styled from 'styled-components';
 import useLazyCheck from '../../hooks/useLazyCheck';
-import { FlexRow } from '../../styles/commomComponents';
+import { FlexRow } from '../../styles/commonComponents';
 import Img from '../common/Image';
 import FeedCommentSection from './FeedCommentSection';
 
