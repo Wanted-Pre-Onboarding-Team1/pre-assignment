@@ -6,10 +6,9 @@ function useValidation() {
     pw: true,
   });
 
-  const onCheckEmail = (event) => {
-    const value = event.target.value;
+  const onCheckEmail = ({ target: { value } }) => {
     const emailRegex =
-    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     if (!isInputValid(emailRegex, value)) {
       setIsValidated({ ...isValidated, email: false });
       return;
@@ -18,10 +17,9 @@ function useValidation() {
     return;
   };
 
-  const onCheckPw = (event) => {
-    const value = event.target.value;
+  const onCheckPw = ({ target: { value } }) => {
     const pwRegex =
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
     if (!isInputValid(pwRegex, value)) {
       setIsValidated({ ...isValidated, pw: false });
       return;

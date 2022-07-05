@@ -6,13 +6,11 @@ import FeedSection from '../component/feed/FeedSection';
 const FeedPage = () => {
   const { feeds } = useFeedLoad();
 
-  return (
-    <FeedsWrapper>
-      {feeds?.map((feed, index) => (
-        <FeedSection feedData={feed} key={`${feed.id}_${index}`} />
-      ))}
-    </FeedsWrapper>
-  );
+  const feedArr = feeds?.map((feed, index) => (
+    <FeedSection feedData={feed} key={`${feed.id}_${index}`} />
+  ));
+
+  return <FeedsWrapper>{feedArr}</FeedsWrapper>;
 };
 
 const FeedsWrapper = styled.div`

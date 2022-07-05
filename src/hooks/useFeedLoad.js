@@ -5,12 +5,13 @@ function useFeedLoad() {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    const getFeeds = async () => {
-      const response = await getDataAPI('feed');
-      setFeeds(response);
-    };
     getFeeds();
   }, []);
+
+  const getFeeds = async () => {
+    const response = await getDataAPI('feed');
+    setFeeds(response);
+  };
 
   return { feeds };
 }
